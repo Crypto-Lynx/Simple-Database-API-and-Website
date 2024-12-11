@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Torrent Info</h1>
+<h2>{{ torrent.title }}</h2>
+<p>{{ torrent.description }}</p>
+
+<h3>Comments</h3>
+<ul>
+    {% for comment in comments %}
+    <li>
+        {{ comment.comment_body }} - by {{ comment.user.username }}
+        {% if current_user.user_role in ["tmoderator", "towner"] %}
+        <form method="POST" action="{{ url_for('delete_comment', comment_id=comment.comment_id) }}" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('comment_upload') }}">Add Comment</a>
+{% endblock %}

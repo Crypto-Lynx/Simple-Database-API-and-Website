@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Forum Posts</title>
+</head>
+<body>
+    <h1>Forum Posts</h1>
+    <ul>
+        {% for post in forumposts %}
+        <li>
+            <strong>{{ post.title }}</strong> by User {{ post.user_id }}
+            <form method="POST" action="/delete_post/{{ post.post_id }}">
+                <button type="submit">Delete Post</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <form method="POST" action="/create_post">
+        <h2>Create New Post</h2>
+        <label>Title:</label>
+        <input type="text" name="title" required>
+        <br>
+        <label>Content:</label>
+        <textarea name="content" required></textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/">Back to Home</a>
+</body>
+</html>

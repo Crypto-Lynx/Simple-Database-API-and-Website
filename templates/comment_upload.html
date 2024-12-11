@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Add Comment</h1>
+<form method="POST">
+    <label for="title">Torrent Title</label>
+    <input type="text" name="title" required>
+    <label for="comment_body">Comment</label>
+    <textarea name="comment_body" required></textarea>
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

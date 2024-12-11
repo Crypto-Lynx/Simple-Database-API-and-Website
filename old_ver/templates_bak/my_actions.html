@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Actions</title>
+</head>
+<body>
+    <h1>My Activity</h1>
+    <ul>
+        {% for action in actions %}
+        <li>{{ action.action_type }} on torrent ID {{ action.torrent_id }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>

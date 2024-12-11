@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Torrents</title>
+</head>
+<body>
+    <h1>Available Torrents</h1>
+    <ul>
+        {% for torrent in torrents %}
+        <li>
+            {{ torrent.title }}
+            <form method="POST" action="/download_torrent/{{ torrent.torrent_id }}">
+                <button type="submit">Download</button>
+            </form>
+            <form method="POST" action="/change_torrent_status/{{ torrent.torrent_id }}">
+                <input type="hidden" name="action_type" value="seed">
+                <button type="submit">Seed</button>
+            </form>
+            <form method="POST" action="/change_torrent_status/{{ torrent.torrent_id }}">
+                <input type="hidden" name="action_type" value="delete">
+                <button type="submit">Delete Activity</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>

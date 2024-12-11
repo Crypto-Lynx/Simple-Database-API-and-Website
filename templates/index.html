@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to Torrent Tracker</h1>
+{% if current_user.is_authenticated %}
+<p>Welcome back, {{ current_user.username }}!</p>
+{% else %}
+<p>Please <a href="/login">login</a> or <a href="/register">register</a> to continue.</p>
+{% endif %}
+{% endblock %}

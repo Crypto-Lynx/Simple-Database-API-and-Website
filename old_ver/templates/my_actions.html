@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Actions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>My Actions</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Torrent Name</th> <!-- Имя торрента -->
+                    <th>Action Type</th>  <!-- Тип действия -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for action in actions %}
+                <tr>
+                    <td>{{ action.torrent.title }}</td> <!-- Имя торрента -->
+                    <td>{{ action.action_type }}</td> <!-- Тип действия -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+    </div>
+</body>
+</html>

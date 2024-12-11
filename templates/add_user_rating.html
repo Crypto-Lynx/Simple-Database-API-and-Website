@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Add User Rating</h1>
+<form method="POST">
+    <label for="target_user_name">Username</label>
+    <input type="text" name="target_user_name" required>
+    <button type="submit">Rate</button>
+</form>
+{% endblock %}

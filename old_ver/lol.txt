@@ -1,0 +1,3 @@
+download_torrent
+change_torrent_status
+register
